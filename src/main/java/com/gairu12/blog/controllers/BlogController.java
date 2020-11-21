@@ -28,10 +28,9 @@ public class BlogController {
     @PostMapping("/add")
     public String blogPostAdd( //TODO: формирование объекта на фронте. @RequestMapping Post post
             @RequestParam String title,
-            @RequestParam String anons,
             @RequestParam String fullText
     ){
-        postService.savePost(title, anons, fullText);
+        postService.savePost(title, fullText);
         return "redirect:/blog";
     }
 
@@ -65,10 +64,9 @@ public class BlogController {
     public String blogPostUpdate(//TODO: формирование объекта на фронте. @RequestMapping Post updatedPost
             @PathVariable(value = "id") long postId,
             @RequestParam String title,
-            @RequestParam String anons,
             @RequestParam String fullText
     ){
-        postService.updatePost(postId, title, anons, fullText);
+        postService.updatePost(postId, title, fullText);
         return "redirect:/blog";
     }
 

@@ -17,13 +17,10 @@ public class Post {
 
     private String title;
 
-    private String anons;
-
     private String fullText;
 
-    public Post(String title, String anons, String fullText) {
+    public Post(String title, String fullText) {
         this.title = title;
-        this.anons = anons;
         this.fullText = fullText;
     }
 }

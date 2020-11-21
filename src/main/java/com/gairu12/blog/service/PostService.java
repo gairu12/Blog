@@ -21,12 +21,11 @@ public class PostService {
         return postRepo.findById(postId).get();
     }
 
-    public void updatePost(long postId, String title, String anons, String fullText) {
+    public void updatePost(long postId, String title, String fullText) {
         Post post = postRepo
                 .findById(postId)
                 .orElseThrow();
         post.setTitle(title);
-        post.setAnons(anons);
         post.setFullText(fullText);
         postRepo.save(post);
     }
@@ -39,8 +38,8 @@ public class PostService {
         postRepo.delete(post);
     }
 
-    public void savePost(String title, String anons, String fullText) {
-        Post post = new Post(title, anons, fullText);
+    public void savePost(String title, String fullText) {
+        Post post = new Post(title, fullText);
         postRepo.save(post);
     }
 
