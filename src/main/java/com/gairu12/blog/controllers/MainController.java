@@ -10,5 +10,8 @@ public class MainController {
     public String Main(){
         return "home";
     }
-
+    @GetMapping("/about")
+    public String blogAbout(){
+        return "about";
+    }
 }

@@ -1,15 +1,31 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${title}"/>
+    <title>About me</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
-<div class="container mt-5">
-    <h1 th:text="${title}"/>
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <h4 class="card-title">Links</h4>
+        <button class="btn btn-warning" type="button">
+            <a href="mailto:sh.gairu@gmail.com">Gmail</a>
+        </button>
+
+        <button class="btn btn-warning" type="button">
+            <a href="https://www.deviantart.com/gairugairugairu">DeviantArt</a>
+        </button>
+
+        <button class="btn btn-warning" type="button">
+            <a href="https://twitter.com/Gairu_12">Twitter</a>
+        </button>
+    </ul>
 </div>
+
+
 <div th:insert="blocks/footer :: footer"></div>
 </body>
 </html>
