@@ -5,27 +5,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+<header th:insert="blocks/header :: header"></header><br>
 <body>
-<header th:insert="blocks/header :: header"></header>
+<div class="container">
 
-<div class="card" style="width: 18rem;">
-    <ul class="list-group list-group-flush">
-        <h4 class="card-title">Links</h4>
-        <button class="btn btn-warning" type="button">
-            <a href="mailto:sh.gairu@gmail.com">Gmail</a>
-        </button>
 
-        <button class="btn btn-warning" type="button">
-            <a href="https://www.deviantart.com/gairugairugairu">DeviantArt</a>
-        </button>
+    <h4 class="card-title">Links</h4>
+    <div class="collection">
+        <div class="card-panel teal lighten-2">
+            <p><a href="mailto:sh.gairu@gmail.com" class="collection-item">Gmail</a></p>
+        </div>
 
-        <button class="btn btn-warning" type="button">
-            <a href="https://twitter.com/Gairu_12">Twitter</a>
-        </button>
-    </ul>
+        <p><a href="https://www.deviantart.com/gairugairugairu" class="collection-item active">DeviantArt</a></p>
+        <p><a href="https://twitter.com/Gairu_12" class="collection-item">Twitter</a></p>
+    </div>
+
 </div>
-
-
 <div th:insert="blocks/footer :: footer"></div>
 </body>
 </html>
