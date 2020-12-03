@@ -14,24 +14,39 @@ public class ImagePostService {
 
     private final ImagePostRepo imagePostRepo;
 
-    public ImagePost getGallery(long id){
+    public ImagePost getImage(long id){
         return imagePostRepo.findById(id).get();
     }
 
-    public void updateGallery(long galleryId, File file){
+    public void updateImage(long imageId, File file){
         ImagePost imagePost = imagePostRepo
-                .findById(galleryId)
+                .findById(imageId)
                 .orElseThrow();
         imagePost.setFile(file);
         imagePostRepo.save(imagePost);
 
     }
-    public void saveGallery(File file) {
+    public void saveImage(File file) {
         ImagePost imagePost = new ImagePost(file);
         imagePostRepo.save(imagePost);
     }
 
-    public Iterable<ImagePost> findAllGallery() {
+    public void deleteImage(long imageId,File file){
+        ImagePost imagePost = imagePostRepo
+                .findById(imageId)
+                .orElseThrow();
+
+        imagePostRepo.delete(imagePost);
+    }
+
+//    public void deletePost(long postId) {
+//        Post post = postRepo
+//                .findById(postId)
+//                .orElseThrow();
+//
+//        postRepo.delete(post);
+//    }
+    public Iterable<ImagePost> findAllImage() {
         return imagePostRepo.findAll();
     }
 
